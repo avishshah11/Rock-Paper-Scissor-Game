@@ -3,6 +3,7 @@
 #Date and Time of creation: 21 June 2020 || 18:11 
 
 import random
+import sys
 print("Hey user, you can choose from the following \n 1.Rock \n 2.Paper \n 3.Scissor ")
 
 # user input
@@ -21,21 +22,27 @@ else:
 print("Computer Choice is: " + comp_choice)
 print(user + " ||-------V/s-------|| " + comp_choice)
 
+posssible_list = ["Rock", "Paper", "Scissor"]
+
 def game(user, comp_choice_name):
-    if user == "Rock" and comp_choice == "Paper":
-        print("You Lose!")
-    elif user == "Paper" and comp_choice == "Rock":
-        print("You Win!")
-    elif user == "Paper" and comp_choice == "Scissor":
-        print("You Lose!")
-    elif user == "Rock" and comp_choice == "Scissor":
-        print("You Win!")
-    elif user == "Scissor" and comp_choice == "Paper":
-        print("You Win!")
-    elif user == "Scissor" and comp_choice == "Rock":
-        print("You Lose!")
-    elif user == comp_choice:
-        print("Tie!")
+    if user not in possible_list:
+        print("Invalid Input")
+        sys.exit("Please Retry with correct input")
+       else:
+        if user == "Rock" and comp_choice == "Paper":
+            print("You Lose!")
+        elif user == "Paper" and comp_choice == "Rock":
+            print("You Win!")
+        elif user == "Paper" and comp_choice == "Scissor":
+            print("You Lose!")
+        elif user == "Rock" and comp_choice == "Scissor":
+            print("You Win!")
+        elif user == "Scissor" and comp_choice == "Paper":
+            print("You Win!")
+        elif user == "Scissor" and comp_choice == "Rock":
+            print("You Lose!")
+        elif user == comp_choice:
+            print("Tie!")
 
 game(user, comp_choice)
 
